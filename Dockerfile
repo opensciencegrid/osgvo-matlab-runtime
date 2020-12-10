@@ -9,9 +9,9 @@ LABEL opensciencegrid.definition_url="https://github.com/opensciencegrid/osgvo-m
 COPY labels.json /.singularity.d/labels.json
 COPY 90-osgvo-matlab-runtime.sh /.singularity.d/env/90-osgvo-matlab-runtime.sh
 
-RUN wget -nv https://ssd.mathworks.com/supportfiles/downloads/R2018b/deployment_files/R2018b/installers/glnxa64/MCR_R2018b_glnxa64_installer.zip && \
-    unzip MCR*.zip -d MATLAB_Runtime_Installer && \
+RUN wget -nv https://ssd.mathworks.com/supportfiles/downloads/R2019a/Release/9/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2019a_Update_9_glnxa64.zip && \
+    unzip MATLAB*.zip -d MATLAB_Runtime_Installer && \
     cd MATLAB_Runtime_Installer && \
     ./install -mode silent -agreeToLicense yes -outputFile ./install.log && \
     cd .. && \
-    rm -rf MCR*.zip MATLAB_Runtime_Installer
+    rm -rf MATLAB*.zip MATLAB_Runtime_Installer
