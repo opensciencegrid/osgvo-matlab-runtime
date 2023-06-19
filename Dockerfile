@@ -9,7 +9,7 @@ LABEL opensciencegrid.definition_url="https://github.com/opensciencegrid/osgvo-m
 COPY labels.json /.singularity.d/labels.json
 COPY 90-osgvo-matlab-runtime.sh /.singularity.d/env/90-osgvo-matlab-runtime.sh
 
-RUN wget -nv https://ssd.mathworks.com/supportfiles/downloads/R2022b/Release/5/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2022b_Update_5_glnxa64.zip && \
+RUN wget -nv https://ssd.mathworks.com/supportfiles/downloads/R2023a/Release/3/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2023a_Update_3_glnxa64.zip && \
     unzip MATLAB*.zip -d MATLAB_Runtime_Installer && \
     cd MATLAB_Runtime_Installer && \
     ./install -mode silent -agreeToLicense yes -outputFile ./install.log && \
